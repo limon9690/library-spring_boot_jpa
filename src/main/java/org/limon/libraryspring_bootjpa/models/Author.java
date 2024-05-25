@@ -15,8 +15,7 @@ public class Author {
     private List<Book> books;
 
     public Author() {}
-    public Author(int id, String name) {
-        this.id = id;
+    public Author( String name) {
         this.name = name;
     }
 

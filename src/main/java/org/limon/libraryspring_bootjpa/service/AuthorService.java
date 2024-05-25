@@ -2,10 +2,15 @@ package org.limon.libraryspring_bootjpa.service;
 
 import org.limon.libraryspring_bootjpa.models.Author;
 import org.limon.libraryspring_bootjpa.repo.AuthorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AuthorService {
+    @Autowired
     private final AuthorRepository authorRepository;
 
     public AuthorService(AuthorRepository authorRepository) {

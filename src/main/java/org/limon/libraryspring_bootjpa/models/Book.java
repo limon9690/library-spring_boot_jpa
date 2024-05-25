@@ -2,6 +2,8 @@ package org.limon.libraryspring_bootjpa.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table()
 public class Book {
@@ -12,12 +14,14 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+    @ManyToMany()
+    @JoinTable(name = "loan", joinColumns = @JoinColumn(name = "member"), inverseJoinColumns = @JoinColumn(name = "book"))
+    private List<Member> members;
 
     public Book() {
     }
 
-    public Book(int id, String title) {
-        this.id = id;
+    public Book(String title) {
         this.title = title;
     }
 
@@ -31,6 +35,14 @@ public class Book {
 
     public String getTitle() {
         return title;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member> members) {
+        this.members = members;
     }
 
     public void setTitle(String title) {
