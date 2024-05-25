@@ -8,12 +8,4 @@ One-to-Many: Author to Books
 Many-to-Many: Book to Member (for loans)
 ## CRUD Operations
 Add, update, delete, and view books and authors
-Register members, Check-out and return books
-## Advanced Features
-Search books by author, title, or genre
-Track due dates and overdue books
-
-Book - id(pk), title, author_id(fk), Members
-Author - id, name, Books
-Member - id, name, Books
-Loan - id, book_id, member_id
+Register members
